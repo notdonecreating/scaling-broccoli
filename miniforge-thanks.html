@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Miniforge Application</title>
+    <link rel="icon" href="favicon5.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --border-color: #333;
+            --secondary-text-color: #666;
+            --accent-color: #4a4a4a;
+            --success-color: #4caf50;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1a1a1a;
+                --text-color: #e0e0e0;
+                --border-color: #e0e0e0;
+                --secondary-text-color: #aaa;
+                --accent-color: #b0b0b0;
+                --success-color: #6abf6e;
+            }
+        }
+        
+        [data-theme="light"] {
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --border-color: #333;
+            --secondary-text-color: #666;
+            --accent-color: #4a4a4a;
+            --success-color: #4caf50;
+        }
+        
+        [data-theme="dark"] {
+            --background-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --border-color: #e0e0e0;
+            --secondary-text-color: #aaa;
+            --accent-color: #b0b0b0;
+            --success-color: #6abf6e;
+        }
+        
+        body {
+            font-family: 'Space Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            border: 2px solid var(--success-color);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 30px 0;
+            color: var(--success-color);
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            color: var(--secondary-text-color);
+        }
+        
+        .return-btn {
+            display: inline-block;
+            background: var(--text-color);
+            color: var(--background-color);
+            padding: 12px 24px;
+            border: 2px solid var(--text-color);
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .return-btn:hover {
+            background: var(--background-color);
+            color: var(--text-color);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: var(--text-color);
+            color: var(--background-color);
+            border: 1px solid var(--border-color);
+            padding: 5px 8px;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        
+        <p>Your application to Miniforge has been submitted successfully.</p>
+        
+        <p>We'll review your application and get back to you within 1-2 weeks.</p>
+        
+        <div class="divider">• • • • • • • • • • • • • • • • • • • • • • • • •</div>
+        
+        <p>In the meantime, keep working on your project and developing your ideas!</p>
+        
+        <a href="miniforge.html" class="return-btn">Return to Program</a>
+    </div>
+    
+    <button class="theme-toggle" id="theme-toggle">Toggle Theme</button>
+    
+    <script>
+        // Theme toggle functionality
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {
+                console.log('localStorage not available, theme preference will not persist');
+            }
+        }
+        
+        let savedTheme = null;
+        try {
+            savedTheme = localStorage.getItem('theme');
+        } catch (e) {
+            console.log('localStorage not available, using system preference only');
+        }
+        
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+        
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+            updateToggleText();
+        });
+        
+        function updateToggleText() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+        
+        updateToggleText();
+    </script>
+</body>
+</html>
