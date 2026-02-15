@@ -291,6 +291,25 @@
             margin: 40px 0;
             color: var(--secondary-text-color);
         }
+
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 0;
+            color: var(--secondary-text-color);
+        }
+        
+        .footer a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+        
+        .footer a:hover {
+            opacity: 0.7;
+        }
         
         @media (max-width: 768px) {
             .container {
@@ -354,6 +373,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="/" style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
         <div class="ascii-art">
     ███╗   ███╗██╗███╗   ██╗██╗███████╗██╗  ██╗ ██████╗ ████████╗
     ████╗ ████║██║████╗  ██║██║██╔════╝██║  ██║██╔═══██╗╚══██╔══╝
@@ -362,6 +382,7 @@
     ██║ ╚═╝ ██║██║██║ ╚████║██║███████║██║  ██║╚██████╔╝   ██║   
  ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝    ╚═╝
         </div>
+        </a>
         
         <div class="header">
             <div>
@@ -506,6 +527,17 @@
                 <p style="font-size: 14px;">We're happy to arrange a call or meeting to discuss partnership opportunities in detail.</p>
             </div>
         </div>
+
+        <div class="footer">
+            <p>
+                <a href="mailto:team@minishot.org">team@minishot.org</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <a href="https://instagram.com/joinminishot" target="_blank" rel="noopener">ig:joinminishot</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <span style="color: var(--secondary-text-color);">© 2025 Minishot</span>
+            </p>
+        </div>
+        
     </div>
     
     <button class="theme-toggle" id="theme-toggle">🌙</button>
