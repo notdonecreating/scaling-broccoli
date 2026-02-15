@@ -326,6 +326,33 @@
                 padding: 3px 6px;
                 font-size: 10px;
             }
+
+            .footer {
+                text-align: center;
+                margin-top: 80px;
+                padding-top: 40px;
+                border-top: 1px solid var(--border-color);
+                color: var(--secondary-text-color);
+            }
+            
+            .footer a {
+                color: var(--text-color);
+                text-decoration: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 2px;
+            }
+            
+            .footer a:hover {
+                opacity: 0.7;
+            }
+            
+            @media (max-width: 768px) {
+                .footer {
+                    margin-top: 60px;
+                    padding-top: 30px;
+                    font-size: 14px;
+                }
+            }
         }
     </style>
 </head>
@@ -433,6 +460,17 @@
                 <p>If you have any questions, feel free to get in touch at <a href="mailto:team@minishot.org">team@minishot.org</a></p>
             </div>
         </div>
+
+        <div class="footer">
+            <p>
+                <a href="mailto:team@minishot.org">team@minishot.org</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <a href="https://instagram.com/joinminishot" target="_blank" rel="noopener">ig:joinminishot</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <span style="color: var(--secondary-text-color);">© 2025 Minishot</span>
+            </p>
+        </div>
+        
     </div>
     
     <button class="theme-toggle" id="theme-toggle">Toggle Dark Mode</button>
