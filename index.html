@@ -206,6 +206,10 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 2px;
         }
+
+        .footer a:hover {
+            opacity: 0.7;
+        }
         
         @media (max-width: 768px) {
             .container {
@@ -247,12 +251,20 @@
             .ascii-art {
                 font-size: 8px;
             }
+
+            .footer {
+                margin-top: 60px;
+                padding-top: 30px;
+                font-size: 14px;
+            }
+            
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <a href="/" style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
             <div class="ascii-art">
     ███╗   ███╗██╗███╗   ██╗██╗███████╗██╗  ██╗ ██████╗ ████████╗
     ████╗ ████║██║████╗  ██║██║██╔════╝██║  ██║██╔═══██╗╚══██╔══╝
@@ -261,6 +273,7 @@
     ██║ ╚═╝ ██║██║██║ ╚████║██║███████║██║  ██║╚██████╔╝   ██║   
  ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝    ╚═╝
             </div>
+            <a href="/" style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
             <div class="tagline">Small inputs for big impact</div>
         </div>
         
@@ -295,7 +308,13 @@
         </div>
         
         <div class="footer">
-            <p>Questions? Get in touch at <a href="mailto:team@minishot.org">team@minishot.org</a></p>
+            <p>
+                <a href="mailto:team@minishot.org">team@minishot.org</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <a href="https://instagram.com/joinminishot" target="_blank" rel="noopener">ig:joinminishot</a>
+                <span style="margin: 0 15px; color: var(--secondary-text-color);">•</span>
+                <span style="color: var(--secondary-text-color);">© 2025 Minishot</span>
+            </p>
         </div>
     </div>
     
